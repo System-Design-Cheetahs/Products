@@ -18,6 +18,9 @@ app.get('/', (req, res) => {
 })
 app.use('/products', products)
 
+app.use('/products', products)
+
+
 app.listen(port, () => {
   console.log(`App running on port ${port}.`)
 })
