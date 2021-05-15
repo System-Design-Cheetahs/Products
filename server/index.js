@@ -16,10 +16,12 @@ app.use(
 app.get('/', (req, res) => {
   res.send("Server Online")
 })
-app.use('/products', products)
+
+app.get('/loaderio-ed09559c3510280a440b9de65b075368', (req, res) => {
+  res.send('server/loaderio-ed09559c3510280a440b9de65b075368.txt')
+})
 
 app.use('/products', products)
-
 
 app.listen(port, () => {
   console.log(`App running on port ${port}.`)
