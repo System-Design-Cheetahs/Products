@@ -1,36 +1,22 @@
 const Pool = require('pg').Pool
 const pool = new Pool({
-  user: 'thecoolzone',
-  host: 'localhost',
+  user: 'poster',
+  host: '18.116.30.94',
   database: 'postgres',
-  password: '',
+  password: 'pleasew0rk',
   port: 5432,
 })
-
-// const getProducts = function(results = 5, request, response) {
-//   pool.query(
-//     `SELECT * FROM product
-//     ORDER BY id
-//     limit ${results}`, (error, results) => {
-//     if (error) {
-//       throw error
-//     }
-//     response.status(200).json(results.rows)
-//   })
-// }
 
 const getProducts = (count) => {
     return pool.query(
       `SELECT * FROM product
       ORDER BY id
-      limit ${count}`,)
+      limit ${count};`)
     .then(res => {
       return res.rows
     })
-    .catch(err => console.log('error'))
+    .catch(err => console.log('error: ', err))
   }
-
-// 'SELECT array_agg(related_product_id) FROM related WHERE current_product_id = 1'
 
 const getProductById = (id) => {
   return pool.query(
