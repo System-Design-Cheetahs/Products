@@ -1,10 +1,10 @@
 const Pool = require('pg').Pool
 const pool = new Pool({
-  user: 'poster',
-  host: '18.116.30.94',
-  database: 'postgres',
-  password: 'pleasew0rk',
-  port: 5432,
+  user: xxxx
+  host: xxxx
+  database: xxxx
+  password: xxxx
+  port: xxxx
 })
 
 const getProducts = (count) => {
